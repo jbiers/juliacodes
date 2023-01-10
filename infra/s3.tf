@@ -52,3 +52,11 @@ data "aws_iam_policy_document" "allow_public_access" {
     ]
   }
 }
+
+resource "aws_instance" "test_gh_actions" {
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "test_gh_actions"
+  }
+}
