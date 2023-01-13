@@ -32,14 +32,14 @@ resource "aws_cloudfront_distribution" "distribution" {
       }
     }
 
-    iewer_protocol_policy = "redirect-to-https"
+    viewer_protocol_policy = "redirect-to-https"
     min_ttl               = 0
     default_ttl           = 86400
     max_ttl               = 31536000
   }
 
   viewer_certificate {
-    acm_certificate_arn      = data.aws_acm_certificate.cert.arn
+    acm_certificate_arn      = "arn:aws:acm:us-east-1:622870367449:certificate/afcbb9d4-ad85-46d6-823f-cffab0134318"
     ssl_support_method       = "sni-only"
     minimum_protocol_version = "TLSv1.2_2018"
   }
