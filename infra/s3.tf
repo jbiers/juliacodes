@@ -52,3 +52,12 @@ data "aws_iam_policy_document" "allow_public_access" {
     ]
   }
 }
+
+resource "aws_instance" "test_gh_actions" {
+  instance_type = "t2.micro"
+  ami           = "ami-06878d265978313ca"
+
+  tags = {
+    Name = "test_gh_actions"
+  }
+}
